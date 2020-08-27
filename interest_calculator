@@ -1,0 +1,28 @@
+
+
+public class hello_world {
+
+	public static void main(String[] args) {
+		
+		double principal = 1000;
+		double apr = 0.025;
+		int index = 1;
+		
+		System.out.print("Original Value: ");
+		System.out.println(principal);
+		System.out.println("Calculating interest...");
+		principal=principal * (1+apr);
+		System.out.print("Year: ");
+		System.out.print(index);
+		System.out.print(" Value: ");
+		System.out.println(principal);
+		index++; // index=index+1;
+		principal=principal * (1+apr);
+		System.out.print("Year: ");
+		System.out.print(index);
+		System.out.print(" Value: ");
+		System.out.println(principal);
+
+	}
+
+}
