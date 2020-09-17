@@ -1,0 +1,16 @@
+public class tester {
+
+
+	public static void main(String[] args) {
+		String str = "Mississippi";
+		
+		System.out.println(str);
+		
+		str = str.replace('i','!');
+		str = str.replace('s','$');
+		
+		System.out.println(str);
+		
+	}
+
+}
