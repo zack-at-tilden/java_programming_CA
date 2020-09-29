@@ -1,0 +1,40 @@
+package voting_machine;
+
+public class VotingMachine {
+
+	private int democrat;
+	private int republican;
+	
+	
+	
+		// vote for democrat
+		public void votedemocrat() {
+			this.democrat = this.democrat + 1;
+			
+		}
+
+
+		// vote for republican
+		public void voterepublican() {
+			this.republican = this.republican +1;
+		}
+		
+		
+		
+		
+		// method for clearing
+		public void clear() {
+		this.democrat = 0;
+		this.republican = 0;
+		}
+		
+		// to get all votes 
+		public void getvotes() {
+			System.out.println(this.democrat);
+			System.out.println(this.republican);
+		}
+	
+}
+	
+	
+
