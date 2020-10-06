@@ -1,0 +1,32 @@
+package math;
+
+import java.util.Scanner;
+
+public class equation {
+	
+	public static void main(String[] args) {
+		// scanner thing
+		Scanner in = new Scanner(System.in);
+      
+		// asking 4 the numbz
+		System.out.print("1st number");
+        int one = in.nextInt();
+        System.out.print("2nd number");
+        int two = in.nextInt();
+		
+		
+		
+        // equations
+		 System.out.printf("Sum: %d%n", one + two);
+	     System.out.printf("Difference: %d%n", one - two);
+	     System.out.printf("Product: %d%n", one * two);
+	     System.out.printf("Average:  %.2f%n", (double) (one + two) / 2);
+	     System.out.printf("Distance: %d%n", Math.abs(one - two));
+	     System.out.printf("Maximum: %d%n", Math.max(one, two));
+	     System.out.printf("Minimum %d%n", Math.min(one, two));
+	
+	     
+	     // 20 & 25 for 4.5
+	}
+
+}
