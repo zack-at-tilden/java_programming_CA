@@ -1,0 +1,28 @@
+package bank_pkg;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner input = new Scanner(System.in);
+		
+	
+		
+		System.out.println("Initial Balance: ");
+		double principle = input.nextDouble();
+		
+		System.out.println("\nAnnual interest rate in percent: ");
+		double rate = input.nextDouble();
+		
+		System.out.println("How many months: \n");
+		int Time = input.nextInt();
+		
+		
+	
+		System.out.println("Money after:" + Time + " months is :" + (principle * Math.pow(1+(rate/1), 1 * Time)));
+
+		
+	}	
+
+}
