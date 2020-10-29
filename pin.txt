@@ -1,0 +1,32 @@
+package pin_pkg;
+
+import java.util.Scanner;
+
+public class Main {
+	
+	public static final int PIN = 1234;
+
+	public static void main(String[] args) {
+
+		Scanner in = new Scanner(System.in);
+			
+		int tries = 0;
+		
+		while(true) {
+			System.out.println("Pin?");
+			int pin = in.nextInt();
+			
+			if (pin == PIN) {
+				System.out.println("Your PIN is correct");
+			}
+			else {
+				System.out.println("Your PIN is incorrect");
+				tries++;
+			}
+			if(tries >= 3) {
+				System.out.println("Your bank card is blocked");
+			}
+		}
+	}
+
+}
