@@ -1,0 +1,27 @@
+package fibo_pkg;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("enter integer");
+		int userInput;
+		userInput = keyboard.nextInt();
+		int fold1 = 0;
+		
+		int fold2 = 1;
+	
+		int foldNew = 0;
+	
+		int inputCounter;
+		
+		for ( inputCounter = 0; inputCounter < userInput; inputCounter ++){
+			foldNew = fold1 + fold2;
+			fold2 = fold1;
+			fold1 = foldNew;
+		}
+		System.out.print("The" + inputCounter + "The Fibannaci is:" + foldNew);
+		
+	}
+}
