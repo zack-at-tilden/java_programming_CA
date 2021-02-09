@@ -1,0 +1,129 @@
+package appointment_pkg;
+
+public class Appointment
+{
+private String description;
+private int year;
+private int month;
+private int day;
+public Appointment(int year, int month, int day, String description)
+{
+   this.year = year;
+   this.month = month;
+   this.day = day;
+   this.description = description;
+}
+public int getYear()
+{
+   return year;
+}
+public int getMonth()
+{
+   return month;
+}
+public int getDay()
+{
+   return day;
+}
+public boolean occursOn(int year, int month, int day)
+{
+   return (year == this.year) && (month == this.month) && (day == this.day);
+}
+
+public String toString()
+{
+   return description;
+}
+}
+
+package appointment_pkg;
+
+public class day extends Appointment
+{
+public day(int year, int month, int day, String description)
+{
+   super(year, month, day, description);
+}
+public boolean occursOn(int year, int month, int day)
+{
+   if (year > getYear())
+   {
+       return true;
+   }
+   if (year == getYear())
+   {
+       if (month > getMonth())
+       {
+           return true;
+       }
+       if (month == getMonth())
+       {
+           if (day >= getDay())
+           {
+           return true;
+           }
+       }
+   }
+   return false;
+}
+}
+package appointment_pkg;
+public class month extends Appointment
+{
+public month(int year, int month, int day, String description)
+{
+   super(year, month, day, description);
+}
+public boolean occursOn(int year, int month, int day)
+{
+   if (year < getYear())
+   {
+       return false;
+   }
+   if (month < getMonth() && year == getYear())
+   {
+       return false;
+   }
+   return day == getDay();
+}
+}
+package appointment_pkg;
+
+public class one extends Appointment
+{
+public one(int year, int month, int day, String description)
+{
+   super(year, month, day, description);
+}
+}
+
+
+package appointment_pkg;
+
+import java.util.Scanner;
+public class testing
+{
+public static void main(String[] args)
+{
+   Appointment[] appointments = new Appointment[2];
+   appointments[0] = new day(2003, 5, 6, "bday");
+   appointments[1] = new month(2020, 1, 2, "ok.");
+   appointments[3] = new one(2020, 1, 1, "o");
+   System.out.println("Enter a date (year, month, day) to list "
+       + "appointments: ");
+   Scanner in = new Scanner(System.in);
+   int year = in.nextInt();
+   int month = in.nextInt();
+   int day = in.nextInt();
+   for (int i = 0; i < appointments.length; i++)
+   {
+       if (appointments[i].occursOn(year, month, day))
+       {
+           System.out.println(appointments[i]);
+       }
+   }
+}
+}
+
+
+
